@@ -1,24 +1,30 @@
-# README
+# URL Shortener API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+API created to make short URLs
 
-Things you may want to cover:
+## How to run?
 
-* Ruby version
+```
+docker run -d -p 4000:4000 joyvis/url-shortener-api:0.0.1.RELEASE
+```
 
-* System dependencies
+## How to use?
 
-* Configuration
+Send a post to `http://localhost:4000/links` with the following body:
+```
+{
+    "link": {
+        "url": "http://www.google.com"
+    }
+}
+```
 
-* Database creation
+it will return a response like this:
 
-* Database initialization
+```
+{
+    "shortened_url": "http://localhost:4000/a19754"
+}
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+then you just have to open shortened_url link and it will redirect you to the url sent.
